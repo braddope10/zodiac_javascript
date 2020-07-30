@@ -1,3 +1,1 @@
 # zodiac_javascript
-
-diwbghq
