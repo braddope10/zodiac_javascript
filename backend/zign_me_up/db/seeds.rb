@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# Seed an example User
+# Seed a User example
 
-User.create(name: "Bob", username: "Bobob", email: "bob1929@gmail.com", bday: "")
+User.create(name: "Bob", username: "Bobob", email: "bob1929@gmail.com", bday: "", sign_id: 1)
 
 
 # Seed zodiac signs
