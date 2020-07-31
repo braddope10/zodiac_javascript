@@ -1,9 +1,12 @@
+require 'pry'
+
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /users
   def index
     @users = User.all
+    # binding.pry
 
     render json: @users
   end
