@@ -12,6 +12,7 @@ function fetchUsers(){
     .then(users => {
         for (const user of users){
             let u = new User(user.id, user.name, user.username, user.email, user.bday, user.sign_id)
+            u.renderUser();
         }
     })
 }
