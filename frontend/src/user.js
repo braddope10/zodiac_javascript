@@ -9,10 +9,10 @@ class User{
     }
     
     renderUser() {
+        let usersDiv = document.getElementById("users-container")
 
 
 
 
-        
     }
 }
