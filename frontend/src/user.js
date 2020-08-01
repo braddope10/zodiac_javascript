@@ -7,4 +7,12 @@ class User{
         this.bday = bday;
         this.sign_id = sign_id;
     }
+    
+    renderUser() {
+
+
+
+
+        
+    }
 }
