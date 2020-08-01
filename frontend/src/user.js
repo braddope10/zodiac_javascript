@@ -12,7 +12,10 @@ class User{
         let usersDiv = document.getElementById("users-container")
         usersDiv.innerHTML +=
         `
-        
+        <ul>
+            <h3>${this.name}, you are a Leo </h3>
+            <li>Name: ${this.name} - Username: ${this.username}</li>
+        </ul>
         `
     }
 }
