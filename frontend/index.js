@@ -7,7 +7,9 @@ const BASE_URL = "http://localhost:3000"
 // READ - Fetch /users index
 
 function fetchUsers(){
-    
+    fetch()
+    .then()
+    .then()
 }
 
 
