@@ -37,10 +37,12 @@ function createForm() {
     </form>
     `
 
+    usersForm.addEventListener("submit", userFormSubmit)
 }
 
 function userFormSubmit() {
     
+
 }
 
 
