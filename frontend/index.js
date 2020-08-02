@@ -22,7 +22,8 @@ function fetchUsers(){
 // CREATE - Create a new user
 
 function createForm() {
-    
+    let usersForm = document.getElementById("users-form")
+
 }
 
 
