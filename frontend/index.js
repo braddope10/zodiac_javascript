@@ -21,4 +21,13 @@ function fetchUsers(){
 
 // CREATE - Create a new user
 
+function createForm() {
+    
+}
+
+
+
+
+
+
 // DELETE - Delete a user
