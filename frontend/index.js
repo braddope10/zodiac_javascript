@@ -31,8 +31,8 @@ function createForm() {
         Name: <input type="text" id="name"><br><br>
         Username: <input type="text" id="username"><br><br>
         Email: <input type="text" id="email"><br><br>
-        Month: <input type="number" id="day" style="width: 40px" min="1" max="31"> 
-        Day: <input type="number" id="month" style="width: 40px" min="1" max="12"><br><br>
+        Month: <input type="number" id="month" style="width: 40px" min="1" max="12"> 
+        Day: <input type="number" id="day" style="width: 40px" min="1" max="31"><br><br>
         <input type="submit" value="Find Your Zodiac Sign">
     </form>
     `
@@ -41,8 +41,14 @@ function createForm() {
 }
 
 function userFormSubmit() {
-    
+    event.preventDefault();
+    let name = document.getElementById("name").value
+    let username = document.getElementById("username").value
+    let email = document.getElementById("email").value
+    let month = document.getElementById("month").value
+    let day = document.getElementById("day").value
 
+    console.log(name, username, email, month, day)
 }
 
 
