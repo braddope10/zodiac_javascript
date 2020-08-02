@@ -12,9 +12,9 @@
 
 # Seed a User example
 
-User.create(name: "Bob", username: "Bobob", email: "bob1929@gmail.com", bday: "", sign_id: 1)
+User.create(name: "Bob", username: "Bobob", email: "bob1929@gmail.com", day: "", month: "", sign_id: 1)
 
-User.create(name: "Stacy", username: "Staceee", email: "stacy1999@gmail.com", bday: "", sign_id: 4)
+User.create(name: "Stacy", username: "Staceee", email: "stacy1999@gmail.com", day: "", month: "", sign_id: 4)
 
 
 # Seed zodiac signs

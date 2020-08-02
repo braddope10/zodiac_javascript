@@ -24,6 +24,18 @@ function fetchUsers(){
 function createForm() {
     let usersForm = document.getElementById("users-form")
 
+    usersForm.innerHTML +=
+    `
+    <form>
+        Name: <input type="text" id="name">
+        Username: <input type="text" id="username">
+        Email: <input type="text" id="email">
+        Birthday: <input type="date" id="bday">
+        
+
+    </form>
+    `
+
 }
 
 
