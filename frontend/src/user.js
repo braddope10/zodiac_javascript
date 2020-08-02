@@ -1,10 +1,11 @@
 class User{
-    constructor(id, name, username, email, bday, sign_id){
+    constructor(id, name, username, email, day, month, sign_id){
         this.id = id;
         this.name = name;
         this.username = username;
         this.email = email;
-        this.bday = bday;
+        this.day = day;
+        this.month = month;
         this.sign_id = sign_id;
     }
     
@@ -14,9 +15,9 @@ class User{
         usersDiv.innerHTML +=
         `
         <ul>
-            <h3>${this.name}, you are a ${this.sign_id} </h3>
-            <li>Username: ${this.username}</li>
-            <li>Birthday: ${this.bday}</li>
+            <h3> ${this.name}, you are a ${this.sign_id} </h3>
+            <li> Username: ${this.username} </li>
+            <li> Birthday: ${this.day}/${this.month} </li>
         </ul>
         `
     }
