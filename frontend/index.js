@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    createForm();
     fetchUsers();
 })
 
@@ -11,7 +12,7 @@ function fetchUsers(){
     .then(resp => resp.json())
     .then(users => {
         for (const user of users){
-            let u = new User(user.id, user.name, user.username, user.email, user.bday, user.sign_id)
+            let u = new User(user.id, user.name, user.username, user.email, user.day, user.month, user.sign_id)
             u.renderUser();
         }
     })
@@ -27,15 +28,19 @@ function createForm() {
     usersForm.innerHTML +=
     `
     <form>
-        Name: <input type="text" id="name">
-        Username: <input type="text" id="username">
-        Email: <input type="text" id="email">
-        Birthday: <input type="date" id="bday">
-        
-
+        Name: <input type="text" id="name"><br><br>
+        Username: <input type="text" id="username"><br><br>
+        Email: <input type="text" id="email"><br><br>
+        Month: <input type="number" id="day" style="width: 40px" min="1" max="31"> 
+        Day: <input type="number" id="month" style="width: 40px" min="1" max="12"><br><br>
+        <input type="submit" value="Find Your Zodiac Sign">
     </form>
     `
 
+}
+
+function userFormSubmit() {
+    
 }
 
 
