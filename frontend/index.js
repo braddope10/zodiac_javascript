@@ -48,10 +48,18 @@ function userFormSubmit() {
     let month = document.getElementById("month").value
     let day = document.getElementById("day").value
 
-    console.log(name, username, email, month, day)
+    let user = {
+        name: name,
+        username: username,
+        email: email,
+        month: month,
+        day: day
+    }
 }
 
 
+
+    
 
 
 
