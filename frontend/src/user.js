@@ -19,6 +19,9 @@ class User{
             <li> Username: ${this.username} </li>
             <li> Birthday: ${this.day}/${this.month} </li>
         </ul>
+        <button class="delete-bttn" data-id=${this.id} onclick="deleteUser()">Delete User</button>
         `
+
+        
     }
 }

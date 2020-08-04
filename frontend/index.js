@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const BASE_URL = "http://localhost:3000"
 
-let zodiacSignList = []
 
 // READ - Fetch /users index
 
@@ -50,6 +49,10 @@ function userFormSubmit() {
     let month = document.getElementById("month").value
     let day = document.getElementById("day").value
 
+    // In order for the user to be created you must have the all the attributes required
+    // Create an if/else statement to append the correct Zodiac sign to the user based on their birth day and month
+    // Attach the correct sign_id to the user based on those qualifications
+
     let user = {
         name: name,
         username: username,
@@ -59,9 +62,9 @@ function userFormSubmit() {
     }
 
     fetch(`${BASE_URL}/users`, {
-        method: "POST",
+        method: 'POST',
         headers: {
-            'Accept': 'application/json'
+            'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(user)
@@ -79,10 +82,10 @@ function userFormSubmit() {
 
 
 function deleteUser() {
-    let userId = parseInt(event.target.datset.id)
+    let userId = parseInt(event.target.dataset.id)
 
-    fetch(`${BASE_URL}/users/${userID}`, {
-        method: "DELETE"
+    fetch(`${BASE_URL}/users/${userId}`, {
+        method: 'DELETE'
     })
 
     this.location.reload()
