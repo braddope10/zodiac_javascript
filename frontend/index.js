@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const BASE_URL = "http://localhost:3000"
 
+let zodiacSignList = []
+
 // READ - Fetch /users index
 
 function fetchUsers(){
@@ -55,13 +57,33 @@ function userFormSubmit() {
         month: month,
         day: day
     }
+
+    fetch(`${BASE_URL}/users`, {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json'
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    })
+    .then(resp => resp.json())
+    .then(user => {
+        let u = new User(user.id, user.name, user.username, user.email, user.day, user.month, user.sign_id)
+        u.renderUser();
+    })
 }
 
 
 
-    
-
-
-
-
 // DELETE - Delete a user
+
+
+function deleteUser() {
+    let userId = parseInt(event.target.datset.id)
+
+    fetch(`${BASE_URL}/users/${userID}`, {
+        method: "DELETE"
+    })
+
+    this.location.reload()
+}
