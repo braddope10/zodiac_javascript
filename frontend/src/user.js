@@ -21,7 +21,5 @@ class User{
         </ul>
         <button class="delete-bttn" data-id=${this.id} onclick="deleteUser()">Delete User</button>
         `
-
-        
     }
 }

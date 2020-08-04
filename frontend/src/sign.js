@@ -5,4 +5,8 @@ class Sign{
         this.img_src = img_src;
         this.description = description;
     }
+
+    addSign(zodiacSignList) {
+        zodiacSignList.push(this)
+    }
 }

@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const BASE_URL = "http://localhost:3000"
 
+zodiacSignList = []
+
 
 // READ - Fetch /users index
 
@@ -59,6 +61,7 @@ function userFormSubmit() {
         email: email,
         month: month,
         day: day
+        // sign_id: sign_id
     }
 
     fetch(`${BASE_URL}/users`, {
