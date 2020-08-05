@@ -7,6 +7,6 @@ class Sign{
     }
 
     addSign(zodiacSignList) {
-        zodiacSignList.push(this)
+        zodiacSignList.push(console.log(this))
     }
 }

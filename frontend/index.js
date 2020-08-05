@@ -5,7 +5,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const BASE_URL = "http://localhost:3000"
 
-zodiacSignList = []
+let zodiacSignList = []
+
+
+// Fetch /sings index and push them to zodiacSingList's array
+
+function fetchSings() {
+    fetch(`${BASE_URL}/sings`)
+    .then(resp => resp.json())
+    .then(sings => {
+        for (const sign of signs){
+            let s = new Sign(sign.id, sign.name, sign.img_src, sign.description)
+            s.addSign(zodiacSignList);
+        }
+    })
+}
 
 
 // READ - Fetch /users index
