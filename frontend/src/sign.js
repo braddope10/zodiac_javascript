@@ -6,7 +6,7 @@ class Sign{
         this.description = description;
     }
 
-    addSign(zodiacSignList) {
-        zodiacSignList.push(console.log(this))
+    addSign(array) {
+        array.push(this)
     }
 }
