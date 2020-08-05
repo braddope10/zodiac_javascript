@@ -71,7 +71,31 @@ function userFormSubmit() {
     // Attach the correct sign_id to the user based on those qualifications
 
     function findZodiacSign(month, day) {
-
+        if((month == 3 && day <= 21) || (month == 4 && day >= 20)) { //Aries
+            return ;
+          } else if ((month == 4 && day >= 21) || (month == 5 && day <= 20)) { //Taurus
+            return ;
+          } else if((month == 5 && day >= 21) || (month == 6 && day <= 20)) { //Gemini
+            return ;
+          } else if((month == 6 && day >= 21) || (month == 7 && day <= 22)) { //Cancer
+            return ;
+          } else if((month == 7 && day >= 23) || (month == 8 && day <= 22)) { //Leo
+            return ;
+          } else if((month == 8 && day >= 23) || (month == 9 && day <= 22)) { //Virgo
+            return ;
+          } else if((month == 9 && day >= 23) || (month == 10 && day <= 22)) { //Libra
+            return ;
+          } else if((month == 10 && day >= 23) || (month == 11 && day <= 22)) { //Scoprio
+            return ;
+          } else if((month == 11 && day >= 23) || (month == 12 && day <= 21)) { //Saggitarius
+            return ;
+          } else if((month == 12 && day >= 22) || (month == 1 && day <= 19)) { //Capricorn
+            return ;
+          } else if((month == 1 && day >= 20) || (month == 2 && day <= 19)) { //Aquarius
+            return ;
+          } else if((month == 2 && day >= 20) || (month == 3 && day <= 20)) { //Pisces
+            return ;
+          }
     }
 
     let user = {
