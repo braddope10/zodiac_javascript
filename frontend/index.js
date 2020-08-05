@@ -11,12 +11,14 @@ let zodiacSignList = []
 // Fetch /sings index and push them to zodiacSingList's array
 
 function fetchSigns() {
-    fetch(`${BASE_URL}/sings`)
+    fetch(`${BASE_URL}/signs`)
     .then(resp => resp.json())
     .then(signs => {
         for (const sign of signs){
             let s = new Sign(sign.id, sign.name, sign.img_src, sign.description)
+            console.log(s)
             s.addSign(zodiacSignList);
+            s.renderUser(); // Users will be able to see the info provided 
         }
     })
 }
@@ -68,13 +70,17 @@ function userFormSubmit() {
     // Create an if/else statement to append the correct Zodiac sign to the user based on their birth day and month
     // Attach the correct sign_id to the user based on those qualifications
 
+    function findZodiacSign(month, day) {
+
+    }
+
     let user = {
         name: name,
         username: username,
         email: email,
         month: month,
-        day: day
-        // sign_id: sign_id
+        day: day,
+        sign_id: sign_id
     }
 
     fetch(`${BASE_URL}/users`, {
@@ -104,3 +110,4 @@ function deleteUser() {
 
     this.location.reload()
 }
+
