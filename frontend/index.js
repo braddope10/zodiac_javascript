@@ -7,6 +7,15 @@ const BASE_URL = "http://localhost:3000"
 
 let zodiacSignList = []
 
+// let user = {
+//     name: name,
+//     username: username,
+//     email: email,
+//     month: month,
+//     day: day,
+//     sign_id: sign_id
+// }
+
 
 // Fetch /sings index and push them to zodiacSingList's array
 
@@ -66,40 +75,54 @@ function userFormSubmit() {
     let month = document.getElementById("month").value
     let day = document.getElementById("day").value
 
+
     // In order for the user to be created you must have the all the attributes required
     // Create an if/else statement to append the correct Zodiac sign to the user based on their birth day and month
     // Attach the correct sign_id to the user based on those qualifications
 
     function findZodiacSign(month, day) {
+
+        let sign = ""
+
         if((month == 3 && day <= 21) || (month == 4 && day >= 20)) { //Aries
-            return ;
+            sign = "1";
+
           } else if ((month == 4 && day >= 21) || (month == 5 && day <= 20)) { //Taurus
-            return ;
+            sign = "2";
+
           } else if((month == 5 && day >= 21) || (month == 6 && day <= 20)) { //Gemini
-            return ;
+            sign = "3";
+
           } else if((month == 6 && day >= 21) || (month == 7 && day <= 22)) { //Cancer
-            return ;
+            sign = "4";
+
           } else if((month == 7 && day >= 23) || (month == 8 && day <= 22)) { //Leo
-            return ;
+            sign = "5";
+
           } else if((month == 8 && day >= 23) || (month == 9 && day <= 22)) { //Virgo
-            return ;
+            sign = "6";
+
           } else if((month == 9 && day >= 23) || (month == 10 && day <= 22)) { //Libra
-            return ;
+            sign = "7";
+
           } else if((month == 10 && day >= 23) || (month == 11 && day <= 22)) { //Scoprio
-            return ;
+            sign = "8";
+
           } else if((month == 11 && day >= 23) || (month == 12 && day <= 21)) { //Saggitarius
-            return ;
+            sign = "9";
+
           } else if((month == 12 && day >= 22) || (month == 1 && day <= 19)) { //Capricorn
-            return ;
+            sign = "10";
+
           } else if((month == 1 && day >= 20) || (month == 2 && day <= 19)) { //Aquarius 
-
-            //Test
-
             // If true, match the sign.id to user.sign_id. That will come in handy when creating the User and for displaying the correct Sign object along with the indicated User objects
-            return ;
+            sign = "11";
+
           } else if((month == 2 && day >= 20) || (month == 3 && day <= 20)) { //Pisces
-            return ;
+            sign = "12";
           }
+
+          signId.push(id)
     }
 
     let user = {
@@ -108,8 +131,10 @@ function userFormSubmit() {
         email: email,
         month: month,
         day: day,
-        sign_id: sign_id
+        // sign_id: sign_id
     }
+
+    console.log(user)
 
     fetch(`${BASE_URL}/users`, {
         method: 'POST',
