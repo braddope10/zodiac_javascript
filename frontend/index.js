@@ -10,10 +10,10 @@ let zodiacSignList = []
 
 // Fetch /sings index and push them to zodiacSingList's array
 
-function fetchSings() {
+function fetchSigns() {
     fetch(`${BASE_URL}/sings`)
     .then(resp => resp.json())
-    .then(sings => {
+    .then(signs => {
         for (const sign of signs){
             let s = new Sign(sign.id, sign.name, sign.img_src, sign.description)
             s.addSign(zodiacSignList);
@@ -34,7 +34,6 @@ function fetchUsers(){
         }
     })
 }
-
 
 
 // CREATE - Create a new user
@@ -94,9 +93,7 @@ function userFormSubmit() {
 }
 
 
-
 // DELETE - Delete a user
-
 
 function deleteUser() {
     let userId = parseInt(event.target.dataset.id)
