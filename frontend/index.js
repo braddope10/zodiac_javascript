@@ -91,7 +91,11 @@ function userFormSubmit() {
             return ;
           } else if((month == 12 && day >= 22) || (month == 1 && day <= 19)) { //Capricorn
             return ;
-          } else if((month == 1 && day >= 20) || (month == 2 && day <= 19)) { //Aquarius
+          } else if((month == 1 && day >= 20) || (month == 2 && day <= 19)) { //Aquarius 
+
+            //Test
+
+            // If true, match the sign.id to user.sign_id. That will come in handy when creating the User and for displaying the correct Sign object along with the indicated User objects
             return ;
           } else if((month == 2 && day >= 20) || (month == 3 && day <= 20)) { //Pisces
             return ;
