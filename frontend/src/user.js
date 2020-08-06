@@ -10,19 +10,20 @@ class User{
     }
     
     renderUser() {
+        // debugger;
         let usersDiv = document.getElementById("users-container")
 
         usersDiv.innerHTML +=
         `
         <div id="list-user" data-id=${this.id}>
+        <h3> ${this.name}, here are your details: </h3>
             <ul>
-                <h3> ${this.name}, here are your details: </h3>
-                <li> Username: ${this.username} </li>
+                <li> Username: ${this.username} </li><br>
                 <li> Birthday: ${this.month}/${this.day} </li>
-                <div id="sign-container"> </div>
+                <div id="sign-container" data-id=${this.id}> </div>
             </ul>
         </div>
-        <button class="delete-bttn" data-id=${this.id} onclick="deleteUser()">Delete User</button>
+        <button class="delete-bttn" data-id=${this.id} onclick="deleteUser()">Delete ${this.name}</button>
         `
     }
 }

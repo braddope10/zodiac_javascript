@@ -6,17 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const BASE_URL = "http://localhost:3000"
 
-let zodiacSignList = []
-
-
-
-
-// let usersDiv = document.getElementById("users-container")
-
-// Fetch /sings index and push them to zodiacSingList's array
-
-
-
 // READ - Fetch /users index
 
 function fetchUsers(){
@@ -30,75 +19,35 @@ function fetchUsers(){
             let userSignId = user.sign_id
             console.log(userSignId)
 
-            fetchSigns(userSignId);
+            fetchSign(user);
         }
     })
 }
 
-// Fetch /sings index and push them to zodiacSingList's array
+// Fetch /signs/user.sign_id
 
-function fetchSigns(indexNum) {
-    fetch(`${BASE_URL}/signs`)
+function fetchSign(user) {
+    fetch(`${BASE_URL}/signs/${user.sign_id}`)
     .then(resp => resp.json())
-    .then(signs => {
-        for (const sign of signs){
-            let s = new Sign(sign.id, sign.name, sign.img_src, sign.description)
-            
-            console.log(sign) // Why is this showing each sign object twice in the console???
-            let allSigns = sign
+    .then(sign => {
 
+        console.log(sign.name)
         
-            let currentSignId = allSigns[indexNum]
 
-            // console.log(indexNum)
+        let signDiv = document.querySelector(`div#sign-container[data-id="${user.id}"]`)
+        signDiv.innerHTML +=
+        `
+        <ul><br>
+            <li>Astrological Symbol: <img src=${sign.img_src} width=15px</img></li><br>
+            <li>Zodiac Name:${sign.name}</li><br>
+            <li>Description:</li>
+            <p>${sign.description}</p>
+        </ul>
+        `
 
-
-
-            let signDiv = document.getElementById("sign-container")
-            signDiv.innerHTML +=
-            `
-            <li>${currentSignId}</li>
-            `
-
-
-
-
-            ////// You might have to create a function that will take in both the user and sign arrays and work with those to diplay the proper 
-
-
-
-
-            // console.log(s)
-            // s.addSign(zodiacSignList);
-
-            // s.renderSign();
-
-            // let signId = zodiacSignList[s.id] 
-            // let signName = signId.name
-            // let signImg = signId.img_src
-            // let signDes = signId.description
-
-            // console.log(signId, signName, signImg, signDes)
-            // currentSign.renderSign();
-
-            // matchUserAndSign(id, zodiacSignList);
-            // console.log(zodiacSignList)
-
-            // let aries = zodiacSignList[0]
-            // console.log(aries.description)
-            // let taurus = zodiacSignList[1]
-
-            // let newTaurus = taurus.description
-
-            // console.log(newTaurus);
-            // s.renderSign();
-            // s.renderUser(); // Users will be able to see the info provided 
-
-        }
-        
     })
+    
 }
-
 
 // CREATE - Create a new user
 
@@ -120,7 +69,7 @@ function createForm() {
     usersForm.addEventListener("submit", userFormSubmit)
 }
 
-
+//
 
 function userFormSubmit() {
     event.preventDefault();
@@ -139,12 +88,6 @@ function userFormSubmit() {
 
     let sign_id = findZodiacSign(month, day);
 
-
-    console.log(month, day)
-    
-    console.log(sign_id)
-
-
     let user = {
         name: name,
         username: username,
@@ -153,8 +96,6 @@ function userFormSubmit() {
         day: parseInt(day),
         sign_id: sign_id
     }
-
-    console.log(user)
 
     fetch(`${BASE_URL}/users`, {
         method: 'POST',
@@ -171,7 +112,6 @@ function userFormSubmit() {
     })
 }
 
-
 // DELETE - Delete a user
 
 function deleteUser() {
@@ -183,7 +123,6 @@ function deleteUser() {
 
     this.location.reload()
 }
-
 
 // The findZodiacSign function has two arguments: month & day.
 // It will use the month and day value gathered in the userFormSubmit function to find the correct value(integer) and assign it to the sign_id variable
@@ -228,57 +167,3 @@ function findZodiacSign(month, day) {
         return 12;
       }
 }
-
-
-
-// function matchUserAndSign(id, list) {
-//     if( id == 1) { //Aries
-//         let aries = list[0]
-//         return aries.renderSign();
-
-//     } else if( id == 2) { //Taurus
-//         let taurus = list[1]
-//         return taurus.renderSign();
-
-//     } else if( id == 3) { //Gemini
-//         let gemini = list[2]
-//         return gemini.renderSign();
-
-//     } else if( id == 4) { //Cancer
-//         let cancer = list[3]
-//         return cancer.renderSign();
-
-//     } else if( id == 5) { //Leo
-//         let leo = list[4]
-//         return leo.renderSign();
-
-//     } else if( id == 6) { //Virgo
-//         let virgo = list[5]
-//         return virgo.renderSign();
-
-//     } else if( id == 7) { //Libra
-//         let libra = list[6]
-//         return libra.renderSign();
-
-//     } else if( id == 8) { //Scoprio
-//         let scorpio = list[7]
-//         return scorpio.renderSign();
-
-//     } else if( id == 9) { //Saggitarius
-//         let saggitarius = list[8]
-//         return saggitarius.renderSign();
-
-//     } else if( id == 10) { //Capricorn
-//         let capricorn = list[9]
-//         return capricorn.renderSign();
-
-//     } else if( id == 11) { //Aquarius 
-//         let aquarius = list[10]
-//         return aquarius.renderSign();
-
-//     } else if( id == 12) { //Pisces
-//         let pisces = list[11]
-//         return pisces.renderSign();
-//     }
-// }
-
