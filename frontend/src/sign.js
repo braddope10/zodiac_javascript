@@ -6,20 +6,20 @@ class Sign{
         this.description = description;
     }
 
-    addSign(zodiacSignList) {
-        zodiacSignList.push(this)
+    addSign(array) {
+        array.push(this)
     }
 
-    // renderSign() {
-    //     let signsDiv = document.getElementById("sign-name")
+    renderSign() {
+        let signDiv = document.getElementById("sign-container")
     
-    //     signsDiv.innerHTML +=
-    //     `
-    //     <ul>
-    //         <h3> ${this.name}, you are a ${this.sign_id} </h3>
-    //         <li> Username: ${this.username} </li>
-    //         <li> Birthday: ${this.month}/${this.day} </li>
-    //     </ul>
-    //     `
-    // }
+        signDiv.innerHTML +=
+        `
+        <ul>
+            <li> Zodiac: ${this.name} </li>
+            <li> Sign: <img src=${this.username}></img width="20px"> </li>
+            <li> Description: ${this.description} </li>
+        </ul>
+        `
+    }
 }
