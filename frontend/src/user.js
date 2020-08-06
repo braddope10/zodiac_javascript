@@ -10,7 +10,7 @@ class User{
     }
     
     renderUser() {
-        let usersDiv = document.getElementById("signs-container")
+        let usersDiv = document.getElementById("users-container")
 
         usersDiv.innerHTML +=
         `
