@@ -4,8 +4,8 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :username
       t.string :email
-      t.string :day
-      t.string :month
+      t.integer :day
+      t.integer :month
       t.belongs_to :sign
 
       t.timestamps
