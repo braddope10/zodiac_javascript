@@ -127,44 +127,48 @@ function deleteUser() {
     this.location.reload()
 }
 
+
+// The findZodiacSign function has two arguments: month & day.
+// It will use the month and day value gathered in the userFormSubmit function to find the correct sign_id while alo
+
 function findZodiacSign(month, day) {
     
     if((month == 3 && day >= 21) || (month == 4 && day <= 20)) { //Aries
-        return sign_id = 1;
+        return 1;
 
       } else if ((month == 4 && day >= 21) || (month == 5 && day <= 20)) { //Taurus
-        return sign_id = 2;
+        return 2;
 
       } else if((month == 5 && day >= 21) || (month == 6 && day <= 20)) { //Gemini
-        return sign_id = 3;
+        return 3;
 
       } else if((month == 6 && day >= 21) || (month == 7 && day <= 22)) { //Cancer
-        return sign_id = 4;
+        return 4;
 
       } else if((month == 7 && day >= 23) || (month == 8 && day <= 22)) { //Leo
-        return sign_id = 5;
+        return 5;
 
       } else if((month == 8 && day >= 23) || (month == 9 && day <= 22)) { //Virgo
-        return sign_id = 6;
+        return 6;
 
       } else if((month == 9 && day >= 23) || (month == 10 && day <= 22)) { //Libra
-        return sign_id = 7;
+        return 7;
 
       } else if((month == 10 && day >= 23) || (month == 11 && day <= 22)) { //Scoprio
-        return sign_id = 8;
+        return 8;
 
       } else if((month == 11 && day >= 23) || (month == 12 && day <= 21)) { //Saggitarius
-        return sign_id = 9;
+        return 9;
 
       } else if((month == 12 && day >= 22) || (month == 1 && day <= 19)) { //Capricorn
-        return sign_id = 10;
+        return 10;
 
       } else if((month == 1 && day >= 20) || (month == 2 && day <= 19)) { //Aquarius 
         // If true, match the sign.id to user.sign_id. That will come in handy when creating the User and for displaying the correct Sign object along with the indicated User objects
-        return sign_id = 11;
+        return 11;
 
       } else if((month == 2 && day >= 20) || (month == 3 && day <= 20)) { //Pisces
-        return sign_id = 12;
+        return 12;
       }
 }
 
