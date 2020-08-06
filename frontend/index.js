@@ -44,7 +44,7 @@ function fetchSigns(indexNum) {
         for (const sign of signs){
             let s = new Sign(sign.id, sign.name, sign.img_src, sign.description)
             
-            console.log(sign)
+            console.log(sign) // Why is this showing each sign object twice in the console???
             let allSigns = sign
 
         
@@ -59,6 +59,14 @@ function fetchSigns(indexNum) {
             `
             <li>${currentSignId}</li>
             `
+
+
+
+
+            ////// You might have to create a function that will take in both the user and sign arrays and work with those to diplay the proper 
+
+
+
 
             // console.log(s)
             // s.addSign(zodiacSignList);
