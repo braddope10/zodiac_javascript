@@ -10,6 +10,7 @@ let zodiacSignList = []
 
 
 
+
 // let usersDiv = document.getElementById("users-container")
 
 // Fetch /sings index and push them to zodiacSingList's array
@@ -26,27 +27,53 @@ function fetchUsers(){
             let u = new User(user.id, user.name, user.username, user.email, user.day, user.month, user.sign_id)
             u.renderUser();
             
-            let userId = user.id
+            let userSignId = user.sign_id
+            console.log(userSignId)
 
-            console.log(userId)
-
-            fetchSigns(userId);
+            fetchSigns(userSignId);
         }
     })
 }
 
 // Fetch /sings index and push them to zodiacSingList's array
 
-function fetchSigns(id) {
+function fetchSigns(indexNum) {
     fetch(`${BASE_URL}/signs`)
     .then(resp => resp.json())
     .then(signs => {
         for (const sign of signs){
             let s = new Sign(sign.id, sign.name, sign.img_src, sign.description)
-            s.addSign(zodiacSignList);
-            s.renderSign();
+            
+            console.log(sign)
+            let allSigns = sign
 
-            matchUserAndSign(id, zodiacSignList);
+        
+            let currentSignId = allSigns[indexNum]
+
+            // console.log(indexNum)
+
+
+
+            let signDiv = document.getElementById("sign-container")
+            signDiv.innerHTML +=
+            `
+            <li>${currentSignId}</li>
+            `
+
+            // console.log(s)
+            // s.addSign(zodiacSignList);
+
+            // s.renderSign();
+
+            // let signId = zodiacSignList[s.id] 
+            // let signName = signId.name
+            // let signImg = signId.img_src
+            // let signDes = signId.description
+
+            // console.log(signId, signName, signImg, signDes)
+            // currentSign.renderSign();
+
+            // matchUserAndSign(id, zodiacSignList);
             // console.log(zodiacSignList)
 
             // let aries = zodiacSignList[0]
@@ -58,6 +85,7 @@ function fetchSigns(id) {
             // console.log(newTaurus);
             // s.renderSign();
             // s.renderUser(); // Users will be able to see the info provided 
+
         }
         
     })
@@ -195,54 +223,54 @@ function findZodiacSign(month, day) {
 
 
 
-function matchUserAndSign(id, list) {
-    if( id == 1) { //Aries
-        let aries = list[0]
-        return aries.renderSign();
+// function matchUserAndSign(id, list) {
+//     if( id == 1) { //Aries
+//         let aries = list[0]
+//         return aries.renderSign();
 
-    } else if( id == 2) { //Taurus
-        let taurus = list[1]
-        return taurus.renderSign();
+//     } else if( id == 2) { //Taurus
+//         let taurus = list[1]
+//         return taurus.renderSign();
 
-    } else if( id == 3) { //Gemini
-        let gemini = list[2]
-        return gemini.renderSign();
+//     } else if( id == 3) { //Gemini
+//         let gemini = list[2]
+//         return gemini.renderSign();
 
-    } else if( id == 4) { //Cancer
-        let cancer = list[3]
-        return cancer.renderSign();
+//     } else if( id == 4) { //Cancer
+//         let cancer = list[3]
+//         return cancer.renderSign();
 
-    } else if( id == 5) { //Leo
-        let leo = list[4]
-        return leo.renderSign();
+//     } else if( id == 5) { //Leo
+//         let leo = list[4]
+//         return leo.renderSign();
 
-    } else if( id == 6) { //Virgo
-        let virgo = list[5]
-        return virgo.renderSign();
+//     } else if( id == 6) { //Virgo
+//         let virgo = list[5]
+//         return virgo.renderSign();
 
-    } else if( id == 7) { //Libra
-        let libra = list[6]
-        return libra.renderSign();
+//     } else if( id == 7) { //Libra
+//         let libra = list[6]
+//         return libra.renderSign();
 
-    } else if( id == 8) { //Scoprio
-        let scorpio = list[7]
-        return scorpio.renderSign();
+//     } else if( id == 8) { //Scoprio
+//         let scorpio = list[7]
+//         return scorpio.renderSign();
 
-    } else if( id == 9) { //Saggitarius
-        let saggitarius = list[8]
-        return saggitarius.renderSign();
+//     } else if( id == 9) { //Saggitarius
+//         let saggitarius = list[8]
+//         return saggitarius.renderSign();
 
-    } else if( id == 10) { //Capricorn
-        let capricorn = list[9]
-        return capricorn.renderSign();
+//     } else if( id == 10) { //Capricorn
+//         let capricorn = list[9]
+//         return capricorn.renderSign();
 
-    } else if( id == 11) { //Aquarius 
-        let aquarius = list[10]
-        return aquarius.renderSign();
+//     } else if( id == 11) { //Aquarius 
+//         let aquarius = list[10]
+//         return aquarius.renderSign();
 
-    } else if( id == 12) { //Pisces
-        let pisces = list[11]
-        return pisces.renderSign();
-    }
-}
+//     } else if( id == 12) { //Pisces
+//         let pisces = list[11]
+//         return pisces.renderSign();
+//     }
+// }
 

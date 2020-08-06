@@ -10,16 +10,14 @@ class Sign{
         array.push(this)
     }
 
-    renderSign() {
-        let signDiv = document.getElementById("sign-container")
+    // renderSign() {
+    //     let signDiv = document.getElementById("sign-container")
     
-        signDiv.innerHTML +=
-        `
-        <ul>
-            <li> Zodiac: ${this.name} </li>
-            <li> Sign: <img src=${this.username}></img width="20px"> </li>
-            <li> Description: ${this.description} </li>
-        </ul>
-        `
-    }
+    //     signDiv.innerHTML +=
+    //     `
+    //         <li> Zodiac: ${this.name} </li>
+    //         <li> Sign: <img src=${this.username}></img width="20px"> </li>
+    //         <li> Description: ${this.description} </li>
+    //     `
+    // }
 }
