@@ -40,7 +40,7 @@ function fetchSign(user) {
         <ul><br>
             <li>Astrological Symbol: <img src=${sign.img_src} width=15px</img></li><br>
             <li>Zodiac Name: ${sign.name}</li><br>
-            <li>Description:</li>
+            <li>Trait Description:</li>
             <p>${sign.description}</p>
         </ul>
         `
@@ -59,7 +59,8 @@ function createForm() {
     <form onsubmit="setTimeout(function(){window.location.reload();},10);">
         Name: <input type="text" id="name"><br><br>
         Username: <input type="text" id="username"><br><br>
-        Email: <input type="text" id="email"><br><br>
+        Email: <input type="text" id="email"><br>
+        <p>Birthday: mm/dd</p>
         Month: <input type="number" id="month" style="width: 40px" min="1" max="12"> 
         Day: <input type="number" id="day" style="width: 40px" min="1" max="31"><br><br>
         <input type="submit" value="Find Your Zodiac Sign">
