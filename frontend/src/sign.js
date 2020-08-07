@@ -9,15 +9,4 @@ class Sign{
     addSign(array) {
         array.push(this)
     }
-
-    // renderSign() {
-    //     let signDiv = document.getElementById("sign-container")
-    
-    //     signDiv.innerHTML +=
-    //     `
-    //         <li> Zodiac: ${this.name} </li>
-    //         <li> Sign: <img src=${this.username}></img width="20px"> </li>
-    //         <li> Description: ${this.description} </li>
-    //     `
-    // }
 }

@@ -117,15 +117,13 @@ function userFormSubmit() {
 function deleteUser() {
     let userId = parseInt(event.target.dataset.id)
 
-    // debugger;
-
     fetch(`${BASE_URL}/users/${userId}`, {
         method: 'DELETE'
     })
     event.target.previousElementSibling.remove()
     event.target.remove()
 
-    // this.location.reload()
+    // this.location.reload() not needed
 }
 
 // The findZodiacSign function has two arguments: month & day.

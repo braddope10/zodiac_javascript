@@ -10,7 +10,6 @@ class User{
     }
     
     renderUser() {
-        // debugger;
         let usersDiv = document.getElementById("users-container")
 
         usersDiv.innerHTML +=
