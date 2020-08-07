@@ -56,7 +56,7 @@ function createForm() {
 
     usersForm.innerHTML +=
     `
-    <form>
+    <form onsubmit="setTimeout(function(){window.location.reload();},10);">
         Name: <input type="text" id="name"><br><br>
         Username: <input type="text" id="username"><br><br>
         Email: <input type="text" id="email"><br><br>
@@ -117,11 +117,15 @@ function userFormSubmit() {
 function deleteUser() {
     let userId = parseInt(event.target.dataset.id)
 
+    // debugger;
+
     fetch(`${BASE_URL}/users/${userId}`, {
         method: 'DELETE'
     })
+    event.target.previousElementSibling.remove()
+    event.target.remove()
 
-    this.location.reload()
+    // this.location.reload()
 }
 
 // The findZodiacSign function has two arguments: month & day.
