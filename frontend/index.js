@@ -39,7 +39,7 @@ function fetchSign(user) {
         `
         <ul><br>
             <li>Astrological Symbol: <img src=${sign.img_src} width=15px</img></li><br>
-            <li>Zodiac Name:${sign.name}</li><br>
+            <li>Zodiac Name: ${sign.name}</li><br>
             <li>Description:</li>
             <p>${sign.description}</p>
         </ul>
@@ -162,7 +162,6 @@ function findZodiacSign(month, day) {
         return 10;
 
       } else if((month == 1 && day >= 20) || (month == 2 && day <= 19)) { //Aquarius 
-        // If true, match the sign.id to user.sign_id. That will come in handy when creating the User and for displaying the correct Sign object along with the indicated User objects
         return 11;
 
       } else if((month == 2 && day >= 20) || (month == 3 && day <= 20)) { //Pisces
