@@ -39,6 +39,6 @@ Sign.create(name: "Pisces", img_src: "https://raw.githubusercontent.com/ID25/rai
 
 # Seed a User example
 
-User.create(name: "Bob", username: "Bobob", email: "bob1929@gmail.com", day: 1, month: 12, sign_id: 1)
+# User.create(name: "Bob", username: "Bobob", email: "bob1929@gmail.com", day: 1, month: 12, sign_id: 1)
 
-User.create(name: "Stacy", username: "Staceee", email: "stacy1999@gmail.com", day: 13, month: 3, sign_id: 4)
+# User.create(name: "Stacy", username: "Staceee", email: "stacy1999@gmail.com", day: 13, month: 3, sign_id: 4)
