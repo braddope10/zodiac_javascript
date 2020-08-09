@@ -6,7 +6,7 @@ class Sign{
         this.description = description;
     }
 
-    addSign(array) {
-        array.push(this)
-    }
+    // addSign(array) {
+    //     array.push(this)
+    // }
 }
